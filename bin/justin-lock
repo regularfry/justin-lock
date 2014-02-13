@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'justin/lock'
+
+
+if ARGV.include?( "-h" ) || ARGV.include?( "--help" )
+  puts <<-HELP
+justin-lock, version #{Justin::Lock::VERSION}
+
+Usage:  cat Gemfile | #{$0} > Gemfile.lock
+
+HELP
+else
+  Justin::Lock.run
+end
